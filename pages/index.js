@@ -6,9 +6,7 @@ import axios from "axios";
 
 export default function Home() {
 	const fetcher = (...args) => fetch(...args).then(res => res.json());
-	const { data, error, mutate } = useSWR("https://e3c01e81f399.ngrok.io/", fetcher, {
-		refreshInterval: 500
-	});
+	const { data, error, mutate } = useSWR("https://e3c01e81f399.ngrok.io/", fetcher);
 
 	const toggle = async () => {
 		await axios.get("https://e3c01e81f399.ngrok.io/toggle");
